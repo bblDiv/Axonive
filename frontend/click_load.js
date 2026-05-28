@@ -1,0 +1,19 @@
+import { chromium } from 'playwright';
+
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  
+  page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+  page.on('pageerror', err => console.error('PAGE ERROR:', err.message));
+  
+  await page.goto('http://localhost:5173/axonive');
+  await page.waitForTimeout(1000);
+  
+  console.log('Clicking "Load Sample Brain"...');
+  await page.click('button:has-text("Load Sample Brain")');
+  
+  await page.waitForTimeout(4000);
+  await page.screenshot({ path: 'C:/Users/dabdi/.gemini/antigravity/brain/85178619-7c21-412e-86ed-cd48b957fa00/screenshot_loaded.png' });
+  await browser.close();
+})();
