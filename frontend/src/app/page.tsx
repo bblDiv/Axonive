@@ -1,10 +1,11 @@
+"use client";
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar } from '../components/Navbar';
-import { ScrollSimulations } from '../components/ScrollSimulations';
-import { FeatureSpinner } from '../components/FeatureSpinner';
+import Link from 'next/link';
+import { Navbar } from '@/components/Navbar';
+import { ScrollSimulations } from '@/components/ScrollSimulations';
+import { FeatureSpinner } from '@/components/FeatureSpinner';
 
-export function LandingPage() {
+export default function LandingPage() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -49,13 +50,13 @@ export function LandingPage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  to="/axonive"
+                  href="/axonive"
                   className="px-8 py-4 bg-gradient-to-r from-pink-600 to-rose-600 text-white font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-200 text-center text-lg"
                 >
                   Start Free Trial
                 </Link>
                 <Link
-                  to="/axonive"
+                  href="/axonive"
                   className="px-8 py-4 bg-white/80 border-2 border-pink-200 text-gray-700 font-semibold rounded-lg hover:border-pink-300 hover:shadow-lg transition-all duration-200 text-center text-lg backdrop-blur-sm"
                 >
                   Try Sandbox
@@ -371,13 +372,13 @@ export function LandingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
-              to="/axonive"
+              href="/axonive"
               className="px-10 py-5 bg-white text-rose-600 font-bold rounded-lg hover:bg-pink-50 hover:shadow-2xl transition-all duration-200 text-lg"
             >
               Start Free Trial
             </Link>
             <Link
-              to="/axonive"
+              href="/axonive"
               className="px-10 py-5 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-200 text-lg"
             >
               Schedule Demo
@@ -458,7 +459,7 @@ export function LandingPage() {
               <ul className="space-y-3 text-pink-200/50">
                 <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
-                <li><Link to="/axonive" className="hover:text-white transition-colors font-medium text-pink-300">Try Sandbox</Link></li>
+                <li><Link href="/axonive" className="hover:text-white transition-colors font-medium text-pink-300">Try Sandbox</Link></li>
               </ul>
             </div>
 

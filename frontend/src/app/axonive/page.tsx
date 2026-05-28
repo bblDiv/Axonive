@@ -1,13 +1,14 @@
+"use client";
 import { useState, useMemo } from 'react';
-import { useSimulation } from '../hooks/useSimulation';
-import { FileUpload } from '../components/FileUpload';
-import { BrainViewer3D } from '../components/BrainViewer3D';
-import { SimulationControls } from '../components/SimulationControls';
-import { GeminiInsights } from '../components/GeminiInsights';
-import { ComparisonView } from '../components/ComparisonView';
+import { useSimulation } from '@/hooks/useSimulation';
+import { FileUpload } from '@/components/FileUpload';
+import { BrainViewer3D } from '@/components/BrainViewer3D';
+import { SimulationControls } from '@/components/SimulationControls';
+import { GeminiInsights } from '@/components/GeminiInsights';
+import { ComparisonView } from '@/components/ComparisonView';
 import { BackgroundPaths } from '@/components/ui/background-paths';
 
-export function AxonivePage() {
+export default function AxonivePage() {
   const {
     originalMesh,
     deformedMesh,

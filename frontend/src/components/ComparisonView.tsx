@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { BrainViewer3D } from './BrainViewer3D';
 import type { MeshData } from '../types';

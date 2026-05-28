@@ -13,8 +13,8 @@ import { chromium } from 'playwright';
   page.on('pageerror', err => console.log('PAGE ERROR:', err.message));
 
   try {
-    console.log('Navigating to http://localhost:5173/axonive ...');
-    await page.goto('http://localhost:5173/axonive');
+    console.log('Navigating to http://localhost:3000/axonive ...');
+    await page.goto('http://localhost:3000/axonive');
     await page.waitForTimeout(3000);
     
     // Take a screenshot of the initial page state

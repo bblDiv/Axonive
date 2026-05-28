@@ -1,16 +1,18 @@
-import { Link, useLocation } from 'react-router-dom';
+"use client";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export function Navbar() {
-  const location = useLocation();
+  const pathname = usePathname();
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-pink-100/30">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
               <svg className="w-6 h-6 text-white" viewBox="0 0 256 256" fill="none">
                 <circle cx="128" cy="128" r="90" fill="none" stroke="currentColor" strokeWidth="12" strokeDasharray="16 16" opacity="0.4" />
@@ -36,7 +38,7 @@ export function Navbar() {
               How It Works
             </a>
             <Link
-              to="/axonive"
+              href="/axonive"
               className={`px-5 py-2.5 rounded-lg font-medium transition-all ${
                 isActive('/axonive')
                   ? 'bg-pink-600 text-white shadow-md'
